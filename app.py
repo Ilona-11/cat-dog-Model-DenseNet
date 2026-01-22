@@ -10,14 +10,14 @@ st.set_page_config(page_title="Cat vs Dog Classifier", layout="wide")
 st.markdown("""
     <style>
     .stApp {
-        background-color: #4B5320; /* Army Green */
-        color: #F5F5DC; /* Cream */
+        background-color: #A5C89E; /* Army Green */
+        color: #000000; /* Cream */
     }
     [data-testid="stSidebar"] {
-        background-color: #353D16; /* Darker Green */
+        background-color: #628141; /* Darker Green */
     }
     .stMarkdown, h1, h2, h3, p {
-        color: #F5F5DC !important;
+        color: #000000 !important;
     }
     .stButton>button {
         background-color: #606E32;
@@ -31,7 +31,7 @@ st.markdown("""
 @st.cache_resource
 def load_trained_model():
     # Mengarah ke folder 'models' sesuai struktur Anda
-    model_path = 'models/model_densenet.h5'
+    model_path = 'models/cat_dog_classifier_densenet.h5'
     if os.path.exists(model_path):
         return tf.keras.models.load_model(model_path)
     else:
@@ -45,7 +45,7 @@ with st.sidebar:
     rescale = st.checkbox("Rescale /255 (Normalisasi)", value=True)
 
 # --- MAIN CONTENT ---
-st.title("🐕🐈 Cat vs Dog Classifier")
+st.title("🐕🐈 Cat vs Dog Classifier DenseNet")
 st.write("")
 
 uploaded_file = st.file_uploader("Upload gambar (jpg/png)", type=["jpg", "jpeg", "png"])
