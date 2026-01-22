@@ -1,5 +1,12 @@
+# Python
 __pycache__/
-.streamlit/
-.env
-*.pyc
+*.py[cod]
+
+# Data & Model
 data/
+# Jika file .h5 Anda >100MB, aktifkan baris di bawah ini
+# models/cat_dog_classifier_densenet.h5
+
+# Virtual Environment
+venv/
+.env
